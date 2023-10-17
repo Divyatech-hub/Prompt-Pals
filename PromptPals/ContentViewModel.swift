@@ -8,7 +8,7 @@
 import SwiftUI
 import ChatGPTSwift
 
-class ContentViewModel: Observable {
+class ContentViewModel: ObservableObject {
     
     let api = ChatGPTAPI(apikey: API.key)
     

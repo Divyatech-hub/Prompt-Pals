@@ -18,4 +18,3 @@ struct ChatMessage: Identifiable{
         self.text = text
     }
 }
-j

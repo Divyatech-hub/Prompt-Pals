@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum MessageOwner {
+enum MessageOwner: String {
     case user, assistant
 }
