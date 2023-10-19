@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit 
 
 struct ContentView: View {
     
@@ -86,7 +87,21 @@ struct ContentView: View {
     }
 }
 
-
+//opens another view by swipe: change to button 
+class ViewController: UIViewController {
+    @IBOutlet var swipeLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .systemBlue
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+    }
+    @objc func swipedUp() {
+        let vc = ChatViewController()
+        self.present(vc, animated: true, completion:nil)
+    }
+}
 
 #Preview {
     ContentView()
