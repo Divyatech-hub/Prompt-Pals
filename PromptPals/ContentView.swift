@@ -8,6 +8,31 @@
 import SwiftUI
 import UIKit 
 
+
+//character view screen opens to the chat message view below: opens another view by swipe
+class ViewController: UIViewController {
+    @IBOutlet var swipeLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //add picture above of gpt
+        image(systemName: "Picture")
+            .resizable()
+            .frame(width: 50, height: 50, alignment: .center)
+            .foreground(.orange)
+            .background(.blue)
+        //add text to character name: "GPT B.I.G."
+        //Textview
+        self.view.backgroundColor = .systemBlue
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+    }
+    @objc func swipedUp() {
+        let vc = ChatViewController()
+        self.present(vc, animated: true, completion:nil)
+    }
+}
+
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewModel()
@@ -84,30 +109,6 @@ struct ContentView: View {
 
     func sendMessage() {
         
-    }
-}
-
-//opens another view by swipe: change to button 
-class ViewController: UIViewController {
-    @IBOutlet var swipeLabel: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //add picture above of gpt
-        image(systemName: "Picture")
-            .resizable()
-            .frame(width: 50, height: 50, alignment: .center)
-            .foreground(.orange)
-            .background(.blue)
-        //add text to character name: "GPT B.I.G."
-        //Textview
-        self.view.backgroundColor = .systemBlue
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
-        swipeUp.direction = .up
-        self.view.addGestureRecognizer(swipeUp)
-    }
-    @objc func swipedUp() {
-        let vc = ChatViewController()
-        self.present(vc, animated: true, completion:nil)
     }
 }
 
