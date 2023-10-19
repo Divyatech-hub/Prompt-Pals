@@ -92,6 +92,8 @@ class ViewController: UIViewController {
     @IBOutlet var swipeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //add picture above of gpt
+        //add text to character name: "GPT B.I.G."
         self.view.backgroundColor = .systemBlue
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
         swipeUp.direction = .up
