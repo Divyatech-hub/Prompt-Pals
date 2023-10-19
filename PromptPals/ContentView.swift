@@ -93,7 +93,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //add picture above of gpt
+        image(systemName: "Picture")
+            .resizable()
+            .frame(width: 50, height: 50, alignment: .center)
+            .foreground(.orange)
+            .background(.blue)
         //add text to character name: "GPT B.I.G."
+        //Textview
         self.view.backgroundColor = .systemBlue
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
         swipeUp.direction = .up
