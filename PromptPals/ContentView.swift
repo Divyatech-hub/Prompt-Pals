@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit 
 
 
-//character view screen opens to the chat message view below: opens another view by swipe
+//Zoom: character view screen opens to the chat message view below: opens another view by swipe
 class ViewController: UIViewController {
     @IBOutlet var swipeLabel: UILabel!
     override func viewDidLoad() {
