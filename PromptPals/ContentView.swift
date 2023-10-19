@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var swipeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add picture above of gpt
+        //Tyron: add picture above of gpt
         image(systemName: "Picture")
             .resizable()
             .frame(width: 50, height: 50, alignment: .center)
